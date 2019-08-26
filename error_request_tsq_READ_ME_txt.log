@@ -1,0 +1,30 @@
+INFO : PROCESSING TimeStampReq...
+INFO : Creating TimeStampReq object...
+INFO : Computing hash...
+ERROR : Computing hash: Failure
+Traceback (most recent call last):
+  File "C:/Users/NurulAqila/PycharmProjects/dts_client/request.py", line 46, in compute_hash
+    with open(file_, 'rb') as read_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'READ_ME.txt'
+ERROR : Creating TimeStampReq: Failure
+Traceback (most recent call last):
+  File "C:/Users/NurulAqila/PycharmProjects/dts_client/request.py", line 77, in create_tsq
+    message_imprint['hashedMessage'] = compute_hash(file_, hashlib.new(hash_digest))
+  File "C:/Users/NurulAqila/PycharmProjects/dts_client/request.py", line 55, in compute_hash
+    raise e
+  File "C:/Users/NurulAqila/PycharmProjects/dts_client/request.py", line 46, in compute_hash
+    with open(file_, 'rb') as read_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'READ_ME.txt'
+ERROR : PROCESSING TimeStampReq: FAILURE
+Traceback (most recent call last):
+  File "C:/Users/NurulAqila/PycharmProjects/dts_client/request.py", line 148, in main
+    encoded_tsq = create_tsq(file, hash_digest)
+  File "C:/Users/NurulAqila/PycharmProjects/dts_client/request.py", line 88, in create_tsq
+    raise e
+  File "C:/Users/NurulAqila/PycharmProjects/dts_client/request.py", line 77, in create_tsq
+    message_imprint['hashedMessage'] = compute_hash(file_, hashlib.new(hash_digest))
+  File "C:/Users/NurulAqila/PycharmProjects/dts_client/request.py", line 55, in compute_hash
+    raise e
+  File "C:/Users/NurulAqila/PycharmProjects/dts_client/request.py", line 46, in compute_hash
+    with open(file_, 'rb') as read_file:
+FileNotFoundError: [Errno 2] No such file or directory: 'READ_ME.txt'

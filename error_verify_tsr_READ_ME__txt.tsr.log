@@ -1,0 +1,100 @@
+INFO : VERIFYING TimeStampResp...
+INFO : 	TimeStampResp file: READ_ME__txt.tsr
+INFO : 	TimeStampReq file: READ_ME__txt.tsq
+INFO : 	TSA cert file: tsaa.crt
+INFO : 	CA cert file: cacert.pem
+INFO : TimeStampResp Status: Success
+
+INFO : Checking TSTInfo...
+INFO : 
+TSTInfo:
+ version=1
+ policy=1.2.3.4.1
+ messageImprint=MessageImprint:
+  hashAlgorithm=AlgorithmIdentifier:
+   algorithm=2.16.840.1.101.3.4.2.3
+
+  hashedMessage=0xb42b6a007b7537f31dd6824142f123909f0bffbd861e7f576b8ca5b58650174253fa4795c460e596ff75d8fd1b7529f80c8fd339f607d6c523467f2eea3d1193
+
+ serialNumber=1158938
+ genTime=20190823034127Z
+ ordering=True
+ nonce=-7720710364486634171
+ tsa=GeneralName:
+  directoryName=Name:
+   =RDNSequence:
+    RelativeDistinguishedName:
+     AttributeTypeAndValue:
+      type=2.5.4.10
+      value=0x13084672656520545341
+    RelativeDistinguishedName:
+     AttributeTypeAndValue:
+      type=2.5.4.11
+      value=0x1303545341
+    RelativeDistinguishedName:
+     AttributeTypeAndValue:
+      type=2.5.4.13
+      value=0x136d54686973206365727469666963617465206469676974616c6c79207369676e7320646f63756d656e747320616e642074696d65207374616d70207265717565737473206d616465207573696e672074686520667265657473612e6f7267206f6e6c696e65207365727669636573
+    RelativeDistinguishedName:
+     AttributeTypeAndValue:
+      type=2.5.4.3
+      value=0x130f7777772e667265657473612e6f7267
+    RelativeDistinguishedName:
+     AttributeTypeAndValue:
+      type=1.2.840.113549.1.9.1
+      value=0x1613627573696c657a617340676d61696c2e636f6d
+    RelativeDistinguishedName:
+     AttributeTypeAndValue:
+      type=2.5.4.7
+      value=0x1309577565727a62757267
+    RelativeDistinguishedName:
+     AttributeTypeAndValue:
+      type=2.5.4.6
+      value=0x13024445
+    RelativeDistinguishedName:
+     AttributeTypeAndValue:
+      type=2.5.4.8
+      value=0x130642617965726e
+
+
+
+
+INFO : TSTInfo hashedMessage:		b42b6a007b7537f31dd6824142f123909f0bffbd861e7f576b8ca5b58650174253fa4795c460e596ff75d8fd1b7529f80c8fd339f607d6c523467f2eea3d1193
+INFO : TSTRequest hashedMessage:	b42b6a007b7537f31dd6824142f123909f0bffbd861e7f576b8ca5b58650174253fa4795c460e596ff75d8fd1b7529f80c8fd339f607d6c523467f2eea3d1193
+INFO : TSTInfo nonce:	-7720710364486634171
+INFO : TSRequest nonce:	-7720710364486634171
+INFO : Check TSTInfo: Success
+
+INFO : Checking Signed Attributes...
+INFO : Attribute Content Type
+INFO : 	Attribute Value:		060b2a864886f70d0109100104
+INFO : 	Encoded eContentType:	060b2a864886f70d0109100104
+INFO : Check Attribute Content Type: Success
+
+INFO : Attribute Signing Time
+INFO : 	Attribute Value:	2019-08-23 03:41:27+00:00
+INFO : 	GenTime Value:		2019-08-23 03:41:27+00:00
+INFO : Check Attribute Signing Time: Success
+
+INFO : Attribute Message Digest
+INFO : 	Attribute Value:			0414ea7f2622dd44117f77fcd3d3823827fcb2e31737
+INFO : 	Encoded Digest of eContent:	0414ea7f2622dd44117f77fcd3d3823827fcb2e31737
+INFO : Check Attribute Message Digest: Success
+
+INFO : Attribute Signing Certificate
+ERROR : Signer certificate hash is not equal to TSA certificate hash
+ERROR : Check Attribute Signing Certificate: Failure
+Traceback (most recent call last):
+  File "C:/Users/NurulAqila/PycharmProjects/dts_client/verify.py", line 150, in check_signer
+    substrate = pem.readPemFromFile(open(tsa_cert))
+FileNotFoundError: [Errno 2] No such file or directory: 'tsaa.crt'
+ERROR : Check Signed Attributes: Failure 
+Traceback (most recent call last):
+  File "C:/Users/NurulAqila/PycharmProjects/dts_client/verify.py", line 210, in check_signed_attrs
+    assert check_signer(sign_cert, tsa_cert)
+  File "C:/Users/NurulAqila/PycharmProjects/dts_client/verify.py", line 158, in check_signer
+    raise e
+  File "C:/Users/NurulAqila/PycharmProjects/dts_client/verify.py", line 150, in check_signer
+    substrate = pem.readPemFromFile(open(tsa_cert))
+FileNotFoundError: [Errno 2] No such file or directory: 'tsaa.crt'
+ERROR : TimeStampResp: INVALID

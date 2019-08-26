@@ -1,0 +1,6 @@
+setup.py
+dts_client.egg-info/PKG-INFO
+dts_client.egg-info/SOURCES.txt
+dts_client.egg-info/dependency_links.txt
+dts_client.egg-info/requires.txt
+dts_client.egg-info/top_level.txt
